@@ -9,12 +9,27 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	.coming-soon
+		height: auto
+		padding: 25px
+		.main__content
+			flex-direction: column
+			overflow: hidden
+		.main__content-left
+			width: 100%
+			order: 2
+			text-align: center
+		.main__content-right
+			width: 100%
+			order: 1
+			margin-bottom: 50px
+			img
+				max-width: 100%
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	
+
 	/*Disable Animation on Mobile Devices*/
 	.animated
 		/*CSS transitions*/
@@ -35,6 +50,9 @@
 		-o-animation: none !important
 		-ms-animation: none !important
 		animation: none !important
+
+
+
 
 
 /* Extra Small Devices, Phones */
