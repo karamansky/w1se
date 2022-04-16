@@ -5,6 +5,7 @@
 //@import "app/libs/animate/animate.sass"
 
 *
+	outline: none!important
 	box-sizing: border-box
 	&:before, &:after
 		box-sizing: border-box
@@ -24,6 +25,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body
 	line-height: 1
+	overflow-x: hidden
 
 ol, ul
 	list-style: none
@@ -163,14 +165,16 @@ img
 	.header__menu-item
 		margin-left: 25px
 	a
+		outline: none
 		text-decoration: none
 		color: #fff
 		text-transform: uppercase
 
 .main
-	background: $blue url("/img/header_bg.png") top center no-repeat
+	background: $blue url("../img/header_bg.png") top center no-repeat
 	background-size: 100%
 	padding: 100px 0 0 0
+	overflow-x: hidden
 
 .coming-soon
 	height: 100vh
@@ -210,10 +214,10 @@ img
 .main__content-right
 	width: 50%
 	img
-		transform: scale(2)
+		transform: scale(1.6)
 
 .about
-	background: $blue url("/img/we_are_right_bg.svg") right -120px no-repeat
+	background: $blue url("../img/we_are_right_bg.svg") right -120px no-repeat
 	margin-bottom: 150px
 
 	.block__title
@@ -279,7 +283,6 @@ img
 	grid-column-end: 13
 	grid-row-start: 5
 	grid-row-end: 8
-
 
 .wise
 
@@ -382,7 +385,7 @@ img
 	color: #5F96E1
 	opacity: 0.6
 	padding: 20px 0 20px 28px
-	background: url("/img/dot.svg") left center no-repeat
+	background: url("../img/dot.svg") left center no-repeat
 	&:first-child
 		margin-left: 35px
 	&:nth-child(3)
@@ -449,7 +452,7 @@ img
 		height: 8px
 
 	.slick-dots .slick-active button
-		background: transparent url("/img/slick_dot.svg") center center no-repeat
+		background: transparent url("../img/slick_dot.svg") center center no-repeat
 		background-size: 100%
 		&:before
 			opacity: 1
@@ -508,7 +511,7 @@ img
 	display: flex
 	align-items: center
 	justify-content: center
-	background: transparent url("/img/values_item_bg.png") center center no-repeat
+	background: transparent url("../img/values_item_bg.png") center center no-repeat
 	background-size: 100%
 	width: 190px
 	height: 190px
@@ -533,7 +536,6 @@ img
 		text-align: center
 
 .projects__items
-	width: 100%
 	display: flex
 	flex-wrap: wrap
 	margin-left: -10px
@@ -579,6 +581,8 @@ img
 	.block__title
 		text-align: center
 		margin-bottom: 8px
+		padding-left: 20px
+		padding-right: 20px
 
 	.btn
 		border: none
@@ -592,7 +596,7 @@ img
 
 	input, textarea
 		background: transparent
-		color: #fff
+		color: #fff!important
 		font-family: $light
 		font-weight: 300
 		font-size: 15px
@@ -609,6 +613,19 @@ img
 			font-size: 15px
 			line-height: 1.1
 			color: #6E6192
+
+.error_msg
+	color: red
+	font-size: 16px
+	padding: 20px 0
+	text-align: center
+	display: none
+
+.form__success
+	display: none
+
+	.block__title
+		text-align: center
 
 
 .footer

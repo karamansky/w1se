@@ -28,21 +28,23 @@
 <body>
 
 
+
 <section class="header">
 	<div class="wrapper">
 		<div class="header__inner">
 			<div class="header__logo"><img src="img/wise-white-logo.svg" alt=""></div>
 			<ul class="header__menu">
 				<li class="header__menu-item">
-					<a href="#">About</a>
+					<a href="#wise">About</a>
 				</li>
 				<li class="header__menu-item">
-					<a href="#">Ecosystem</a>
+					<a href="#ecosystem">Ecosystem</a>
 				</li>
 			</ul>
 		</div>
 	</div>
 </section>
+
 
 
 <section class="main">
@@ -54,7 +56,7 @@
 					W1SE is a collective. We are entrepreneurs, community activists, musicians, scientists, software developers, athletes, healers, nutritionists, and more.  All work together to improve the universal quality of life on earth and to empower people do good choices.
 				</div>
 				<div class="main__content-action">
-					<a href="#" class="btn">Learn more</a>
+					<a href="#contactus" class="btn">Learn more</a>
 				</div>
 			</div>
 			<div class="main__content-right">
@@ -63,6 +65,7 @@
 		</div>
 	</div>
 </section>
+
 
 
 <section class="about">
@@ -84,7 +87,7 @@
 
 
 
-<section class="wise">
+<section class="wise" id="wise">
 	<div class="wrapper-mini">
 		<div class="wise__inner">
 			<div class="wise__left">
@@ -137,6 +140,7 @@
 </section>
 
 
+
 <div class="problems">
 	<div class="wrapper-mini">
 		<div class="problems__inner">
@@ -171,6 +175,7 @@
 		</div>
 	</div>
 </div>
+
 
 
 <section class="slider">
@@ -262,7 +267,7 @@
 
 
 
-<section class="projects">
+<section class="projects" id="ecosystem">
 	<div class="wrapper">
 		<h2 class="block__title">OUR Projects</h2>
 		<div class="projects__items">
@@ -306,28 +311,38 @@
 </section>
 
 
-<section class="form">
+
+<section class="form" id="contactus">
 	<div class="wrapper">
 		<div class="form__inner">
 			<h2 class="block__title">Become a w1se member</h2>
-			<form action="">
+			<form action="" class="form__contact">
+
+				<input type="hidden" name="project_name" value="W1SE">
+				<input type="hidden" name="form_subject" value="Email from landing page">
+				<input type="hidden" name="admin_email" value="">
+
 				<div class="form__input-wrap">
-					<input type="text" name="Name" placeholder="First name">
+					<input type="text" id="input_name" name="name" placeholder="First name" required>
 				</div>
 				<div class="form__input-wrap">
-					<input type="text" name="Last name" placeholder="Last name">
+					<input type="text" id="input_lastname" name="lastname" placeholder="Last name" required>
 				</div>
 				<div class="form__input-wrap">
-					<input type="email" name="Email" placeholder="Email">
+					<input type="email" id="input_email" name="email" placeholder="Email">
 				</div>
 				<div class="form__input-wrap">
-					<input type="text" name="Phone" placeholder="Phone">
+					<input type="text" id="input_phone" name="phone" placeholder="Phone" required>
 				</div>
 				<div class="form__input-wrap">
-					<textarea name="Message" placeholder="Type your message here..."></textarea>
+					<textarea id="input_message" name="message" placeholder="Type your message here..."></textarea>
 				</div>
 				<input type="submit" class="btn" value="Submit">
+				<div class="error_msg"></div>
 			</form>
+		</div>
+		<div class="form__success">
+			<h2 class="block__title">Thank you.<br>Message sent.</h2>
 		</div>
 	</div>
 </section>

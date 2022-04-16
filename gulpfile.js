@@ -41,6 +41,7 @@ gulp.task('scripts', function() {
 		'app/libs/jquery/jquery-1.11.2.min.js',
 		'app/libs/waypoints/waypoints.min.js',
 		'app/libs/slick-carousel/slick/slick.min.js',
+		// 'app/libs/sweetalert2/src/sweetalert2.js',
 		// 'app/libs/animate/animate-css.js',
 		])
 		.pipe(concat('libs.js'))

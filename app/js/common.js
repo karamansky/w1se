@@ -8,6 +8,15 @@ $(function() {
 		slidesToShow: 1,
 	});
 
+
+	$(".header__menu, .main__content-action").on("click","a", function (e) {
+		e.preventDefault();
+		var id  = $(this).attr('href'),
+			top = $(id).offset().top;
+		$('body,html').animate({scrollTop: top}, 600);
+	});
+
+
 	//SVG Fallback
 	if(!Modernizr.svg) {
 		$("img[src*='svg']").attr("src", function() {
@@ -17,20 +26,33 @@ $(function() {
 
 	//E-mail Ajax Send
 	//Documentation & Example: https://github.com/agragregra/uniMail
-	$("form").submit(function() { //Change
+	$(".form__contact").submit(function(e) { //Change
+		e.preventDefault();
 		var th = $(this);
-		$.ajax({
-			type: "POST",
-			url: "mail.php", //Change
-			data: th.serialize()
-		}).done(function() {
-			alert("Thank you!");
-			setTimeout(function() {
-				// Done Functions
-				th.trigger("reset");
-			}, 1000);
-		});
-		return false;
+		var name = $(this).find('#input_name').val();
+		var email = $(this).find('#input_email').val();
+		var phone = $(this).find('#input_phone').val();
+
+		if( (name != '') && (email != '') && (phone != '') ){
+			$.ajax({
+				type: "POST",
+				url: "mail.php", //Change
+				data: th.serialize()
+			}).done(function() {
+
+				$('.form__inner').hide('slow');
+				$('.form__success').show('slow');
+
+				setTimeout(function() {
+					th.trigger("reset");
+					$('.form__inner').show('slow');
+					$('.form__success').hide('slow');
+				}, 5000);
+			});
+		}else{
+			$(this).find('.error_msg').html('Error. Please, fill in all the fields form!').show();
+		}
+
 	});
 
 });
