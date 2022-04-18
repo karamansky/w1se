@@ -104,7 +104,7 @@
 					We <span>Harmonize</span> to live with each other, animals and nature.
 					We <span>Unite</span> everyone through <span>Decentralization</span>
 					and create an ecosystem of disruptive technologies and projects
-					to help <span>Mother Earth</span> become beautiful again through sustainability.
+					to help <span>Mother Earth</span> recover her vitality and strength once again.
 				</div>
 			</div>
 			<div class="wise__right">
@@ -205,7 +205,7 @@
 				<div class="slider__left">
 					<h2 class="block__title">Growth, Diversity, & Talent</h2>
 					<div class="slider__item-description">
-						This is an <span>extraordinary family</span> with people all unique in their culture and religions, unique in their experience, and unique in backgrounds. We are entrepreneurs, software developers, musicians, scientists, healers, financiers, people of art, people of music, and more. With such a diversity of talent, we have created a diversity of projects. The scope and scale of what we are able to do together are bigger than anything we thought possible individually
+						This is an <span>extraordinary family</span> of people coming from unique cultures, religions, experiences, and backgrounds. We are entrepreneurs, software developers, musicians, scientists, healers, financiers, people of art, people of music, and more. With such a diversity of talent, we have created a diversity of projects. The scope and scale of what we are able to do together is bigger than anything we thought possible individually.
 					</div>
 				</div>
 				<div class="slider__right">
@@ -250,7 +250,10 @@
 				Freedom<br>Privacy
 			</div>
 			<div class="values__item">
-				Respect<br>Goodness
+				<!--Respect<br>Goodness-->
+				Respect<br>
+				Learning<br>
+				Improvement
 			</div>
 			<div class="values__item">
 				Learning<br>Improvement
@@ -275,14 +278,15 @@
 				<div class="projects__img"><img src="img/projects1.png" alt=""></div>
 				<h4 class="projects__title">W1se software</h4>
 				<div class="projects__description">
-					Expand your business with innovative design and development.
+					Expand your business with innovative design and software development.
 				</div>
 			</div>
 			<div class="projects__item">
 				<div class="projects__img"><img src="img/projects2.png" alt=""></div>
 				<h4 class="projects__title">W1se logistics</h4>
 				<div class="projects__description">
-					An ecosystem of logistics products.
+					The first comprehensive ecosystem of logistics hardware and software solutions
+					covering every angle of freight movement, from start to finish
 				</div>
 			</div>
 			<div class="projects__item">
@@ -296,7 +300,8 @@
 				<div class="projects__img"><img src="img/projects4.png" alt=""></div>
 				<h4 class="projects__title">W1se tribe</h4>
 				<div class="projects__description">
-					Listing to multicultural music and attend one of kind experiences.
+					Is a record label dedicated to recording and promoting
+					cross-cultural high vibrational music.
 				</div>
 			</div>
 			<div class="projects__item">
@@ -316,6 +321,7 @@
 	<div class="wrapper">
 		<div class="form__inner">
 			<h2 class="block__title">Become a w1se member</h2>
+			<div class="form__subtitle">Join W1SE Community!</div>
 			<form action="" class="form__contact">
 
 				<input type="hidden" name="project_name" value="W1SE">
@@ -337,6 +343,10 @@
 				<div class="form__input-wrap">
 					<textarea id="input_message" name="message" placeholder="Type your message here..."></textarea>
 				</div>
+				<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" value="">
+				<div id="gcaptcha" class="g-recaptcha"></div>
+				<div class="text-danger" id="recaptchaError"></div>
+				<br>
 				<input type="submit" class="btn" value="Submit">
 				<div class="error_msg"></div>
 			</form>
@@ -376,6 +386,19 @@
 <script src="libs/respond/respond.min.js"></script>
 <![endif]-->
 
+<script src="https://www.google.com/recaptcha/api.js?render=6LeWl4EfAAAAAJlkwmSkROy1djPTjUfMkAzvMaFU"></script>
+<script type="text/javascript">
+	var onloadCallback = function() {
+		grecaptcha.render('gcaptcha', {
+			'sitekey' : '6LeWl4EfAAAAAJlkwmSkROy1djPTjUfMkAzvMaFU'
+		});
+	};
+	grecaptcha.ready(function() {
+		grecaptcha.execute('6LeWl4EfAAAAAJlkwmSkROy1djPTjUfMkAzvMaFU', {action: 'submit'}).then(function(token) {
+			$('#g-recaptcha-response').val(token);
+		});
+	});
+</script>
 
 <script src="js/libs.js"></script>
 <script src="js/common.js"></script>

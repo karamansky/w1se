@@ -25,9 +25,9 @@ $(function() {
 	};
 
 	//E-mail Ajax Send
-	//Documentation & Example: https://github.com/agragregra/uniMail
 	$(".form__contact").submit(function(e) { //Change
 		e.preventDefault();
+
 		var th = $(this);
 		var name = $(this).find('#input_name').val();
 		var email = $(this).find('#input_email').val();
@@ -38,16 +38,25 @@ $(function() {
 				type: "POST",
 				url: "mail.php", //Change
 				data: th.serialize()
-			}).done(function() {
+			}).done(function(ret) {
 
-				$('.form__inner').hide('slow');
-				$('.form__success').show('slow');
+				console.log(ret);
 
-				setTimeout(function() {
-					th.trigger("reset");
-					$('.form__inner').show('slow');
-					$('.form__success').hide('slow');
-				}, 5000);
+				if( ret == 'success' ){
+					$('.form__inner').hide('slow');
+					$('.form__success').show('slow');
+
+					setTimeout(function() {
+						th.trigger("reset");
+						$('.form__inner').show('slow');
+						$('.form__success').hide('slow');
+					}, 5000);
+				}else{
+					alert('Error! Maybe, You are Robot.');
+				}
+
+			}).fail(function (jqXHR, textStatus) {
+				console.log('ajax fail');
 			});
 		}else{
 			$(this).find('.error_msg').html('Error. Please, fill in all the fields form!').show();
